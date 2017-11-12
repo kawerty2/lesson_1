@@ -23,9 +23,9 @@
 # Нужно вернуть строку, содержащую только четные элементы из исходной строки.
 # Например, из 'a b c d e f' получится 'b d f'
 # Решите задачу в одну строчку используя срезы.
-def even(s):
-    a = s.split()
-    return ' '.join(a[1::2])
+def even(string):
+    even_elem_string = string.split()
+    return ' '.join(even_elem_string[1::2])
 
 
 # B. Наоборот
@@ -34,9 +34,8 @@ def even(s):
 # Нужно вернуть строку, содержащую элементы исходной строки в обратном порядке.
 # Например, из 'a b c d e' получится 'e d c b a'
 # Решите задачу в одну строчку используя срезы.
-def reverse(s):
-    a = s.split()
-    return ' '.join(a[::-1])
+def reverse(string):
+    return string[::-1]
 
 
 # C. Сдвиг
@@ -45,11 +44,10 @@ def reverse(s):
 # Нужно вернуть строку, в которой последний элемент находится на первом месте.
 # Например, из 'a b c d e f' получится 'f a b c d e'
 # Решите задачу в две строки используя срезы.
-def shift(c):
-    a = c.split()
-    b = a[-1:] + a[0:(len(a)-1)]
-    return ' '.join(b)
-
+def shift(string):
+    splitted = string.split()
+    shift = splitted[-1:] + splitted[0:(len(splitted)-1)]
+    return ' '.join(shift)
 
 # D. Палиндром
 # Дано число.
@@ -57,8 +55,8 @@ def shift(c):
 # Число является палиндромом если оно одинаково читающееся в обоих направлениях.
 # Решите задачу в одну строку используя срезы.
 def palindrome(d):
-    a = str(d)[::-1] in str(d)
-    return a
+    palindrome_number = str(d)[::-1] in str(d)
+    return palindrome_number
 
 
 # E. Внутри
@@ -67,11 +65,11 @@ def palindrome(d):
 # Верните строку, в которой первый и последний элементы поставлены в середину 
 # исходной строки. Например, из 'a b c d e f' получится 'b c a f d e'.
 # Решите задачу в три строки используя срезы.
-def inside(a):
-    b = a.split()
-    b[(len(b) / 2): (len(b) / 2) - 1] = [b[0], b[-1]]
-    del b[0], b[-1]
-    return ' '.join(b)
+def inside(string):
+    inside_string = string.split()
+    inside_string[(len(inside_string) / 2): (len(inside_string) / 2) - 1] = [inside_string[0], inside_string[-1]]
+    del inside_string[0], inside_string[-1]
+    return ' '.join(inside_string)
 
 
 # Простая функция test() используется в main() для вывода
@@ -93,7 +91,7 @@ def main():
     print()
     print('Наоборот')
     test(reverse('a b c d e f'), 'f e d c b a')
-    test(reverse('w ee rt fff xyz'), 'xyz fff rt ee w')
+    test(reverse('w ee rt fff xyz'), 'zyx fff tr ee w')
 
     print()
     print('Сдвиг')
